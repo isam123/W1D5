@@ -220,14 +220,19 @@ const b = a.map(function(elem, i, array) {
 })
 
 
-document.writeln(b.toString() + "<br/>");
-const c = b.filter(function(elem, i, array){
+document.writeln(`<h6 class="text-center">`+b.toString()+`</h6> `);
+const c = a.filter(function(elem, i, array){
   return elem === 3;});
 
 
-document.writeln(c.toString() + "<br/>");
-const d = c.reduce(function(prevValue, elem, i, array){
-  return prevValue * elem;
+console.log(c);
+document.writeln(`<h6 class="text-center">`+c.toString()+`</h6>`);
+
+
+
+const d = a.reduce(function(prevValue, elem, i, array){
+    prevValue *=elem;
+  return prevValue ;
 });
 document.writeln(d+ "<br/>");
 
