@@ -214,31 +214,50 @@ console.assert(JSON.stringify(filterLongWords(["dsdad","tretess","fd","dsd"] ,3)
 
 const a = [1,3,5,3,3]; 
 
+const Maptester = (expected , found) =>{
+
+    if(JSON.stringify(expected) === JSON.stringify(found)) return "TEST SUCCEEDED"
+    else return "TEST FAILED.  Expected " + expected + " found " + found;
+
+}
+
+
+const Filtertester = (expected , found) =>{
+
+    if(JSON.stringify(expected) === JSON.stringify(found)) return "TEST SUCCEEDED"
+    else return "TEST FAILED.  Expected " + expected + " found " + found;
+
+}
 
 const b = a.map(function(elem, i, array) {
   return (elem*10) + 3;
 })
 
+console.log(`Expected output of Map of an array [1,3,5,3,3] is   `+Maptester([1,3,5,3,3],[1,3,5,3,3]));
 
-document.writeln(`<h6 class="text-center">`+b.toString()+`</h6> `);
+document.writeln(`<h6 class="text-center"> Map result`+b+`</h6> `);
 const c = a.filter(function(elem, i, array){
   return elem === 3;});
 
+console.log(`Expected output of Filter of an array [1,3,5,3,3] is   `+Filtertester(c,[3,3,3]));
+document.writeln(`<h6 class="text-center"> Filter`+c+`</h6>`);
 
-console.log(c);
-document.writeln(`<h6 class="text-center">`+c.toString()+`</h6>`);
 
+const Reducetester = (expected , found) =>{
+
+    if(expected=== found) return "TEST SUCCEEDED"
+    else return "TEST FAILED.  Expected " + expected + " found " + found;
+
+}
 
 
 const d = a.reduce(function(prevValue, elem, i, array){
     prevValue *=elem;
   return prevValue ;
 });
-document.writeln(d+ "<br/>");
+document.writeln(`<h6 class="text-center"> Reduce `+d+`</h6>`);
+console.log(`Expected output of Filter of an array [1,3,5,3,3] is   `+Reducetester(c,135));
+console.log()
 
-const d2 = a.find(function(elem) {return elem > 1;}); //3
-const d3 = a.findIndex(function(elem) {return elem > 1;}); //1
-document.writeln(d2+ "<br/>");
-document.writeln(d3);
 
 //end m/r/f
