@@ -239,7 +239,7 @@ document.writeln(`<h6 class="text-center"> Map result`+b+`</h6> `);
 const c = a.filter(function(elem, i, array){
   return elem === 3;});
 
-console.log(`Expected output of Filter of an array [1,3,5,3,3] is   `+Filtertester(c,[3,3,3]));
+console.log(`Expected output of Filter of an array [1,3,5,3,3] is  [3,3,3] `+Filtertester(c,[3,3,3]));
 document.writeln(`<h6 class="text-center"> Filter`+c+`</h6>`);
 
 
@@ -256,7 +256,7 @@ const d = a.reduce(function(prevValue, elem, i, array){
   return prevValue ;
 });
 document.writeln(`<h6 class="text-center"> Reduce `+d+`</h6>`);
-console.log(`Expected output of Filter of an array [1,3,5,3,3] is   `+Reducetester(d,135));
+console.log(`Expected output of Reduce of an array [1,3,5,3,3] is 135  `+Reducetester(d,135));
 console.log()
 
 
