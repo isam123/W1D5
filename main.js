@@ -104,10 +104,11 @@ const TestMultiply = (expected ,found)=> {
 document.writeln( `<h6 class="text-center">  Q4.a : Expected output of TestSum([1,2,3,4]) is  10  `+TestVowel(true,function(){ return isVowel('a') }())  + "</h6>");
 document.writeln( `<h6 class="text-center">  Q4.b : Expected output of Multiply([1,2,3,4]) is  24  `+TestMultiply(24,function(){return multiply([1,2,3,4])}()) + "</h6>");
 
-console.log("Expected output of TestSum([1,2,3,4]) is  10 "+TestSum(10,sum([1,2,3,4])));
+console.log("Expected output of Sum([1,2,3,4]) is  10 "+TestSum(10,sum([1,2,3,4])));
 console.log("Expected output of Multiply([1,2,3,4]) is  24 "+TestMultiply(24,multiply([1,2,3,4])));
 
-console.assert(max(10,5)==10,"Number is Invalid [Messege From Assertion] ")
+console.assert(sum([1,2,3,4])==10,"Number is not equal [Messege From Assertion] ")
+console.assert(multiply([1,2,3,4])==24 ,"Number is not equal [Messege From Assertion] ")
 //end of Question 4
 
 
@@ -137,8 +138,9 @@ const testReverse = (expected ,found) =>{
     else return "TEST FAILED.  Expected " + expected + " found " + found;
 
 }
+document.writeln( `<h6 class="text-center">  Q5 : Expected output of Reverse(WAP) is  PAW  `+testReverse("PAW",function () {return reverseString("WAP")}()) + "</h6>");
 
-console.log("Expected output of TestSum(WAP) is  PAW "+testReverse("PAW",reverseString("WAP")));
+console.log("Expected output of Reverse(WAP) is  PAW "+testReverse("PAW",reverseString("WAP")));
 
 console.assert(reverseString("WAP")=="PAW","Word is not equal [Messege From Assertion] ")
 
@@ -166,9 +168,12 @@ const TestLong = (expected,found) =>{
 
 }
 
-console.log(`Expected output of TestLong(["dsdad","tretess","fd","dsd"]) is  7 `+TestLong(7,findLongestWord(["dsdad","tretess","fd","dsd"])));
+document.writeln( `<h6 class="text-center">  Q6 : Expected output of findLongestWord(["dsdad","tretess","fd","dsd"]) is  7  `+TestLong(7,findLongestWord(["dsdad","tretess","fd","dsd"])) + "</h6>");
+
+console.log(`Expected output of findLongestWord(["dsdad","tretess","fd","dsd"]) is  7 `+TestLong(7,findLongestWord(["dsdad","tretess","fd","dsd"])));
 
 console.assert(findLongestWord(["dsdad","tretess","fd","dsd"])==7,"Number is Invalid [Messege From Assertion] ");
+
 // end of findLongestWord()
 
 //start of filterLongWords
@@ -194,8 +199,11 @@ const testFilterLong =(expected , found) =>{
     else return "TEST FAILED.  Expected " + expected + " found " + found;
 } 
 
+document.writeln( `<h6 class="text-center">  Q7 : Expected output of filterLongWords(["dsdad","tretess","fd","dsd"] ,3 ) is  ["dsdad","tretess"]  `+testFilterLong(["dsdad","tretess"],filterLongWords(["dsdad","tretess","fd","dsd"] ,3)) + "</h6>");
 
 console.log(`Expected output of filterLongWords(["dsdad","tretess","fd","dsd"] ,3) is  ["dsdad","tretess"] `+testFilterLong(["dsdad","tretess"],filterLongWords(["dsdad","tretess","fd","dsd"] ,3)));
+
+console.assert(JSON.stringify(filterLongWords(["dsdad","tretess","fd","dsd"] ,3))==JSON.stringify(["dsdad","tretess"]),"array is not equal [Messege From Assertion] ");
 
 // console.assert(filterLongWords(["dsdad","tretess","fd","dsd"],3)==["dsdad","tretess"],"Verification Error ");
 //end of filterLongWords
@@ -213,13 +221,13 @@ const b = a.map(function(elem, i, array) {
 
 
 document.writeln(b.toString() + "<br/>");
-const c = a.filter(function(elem, i, array){
+const c = b.filter(function(elem, i, array){
   return elem === 3;});
 
 
 document.writeln(c.toString() + "<br/>");
-const d = a.reduce(function(prevValue, elem, i, array){
-  return prevValue + elem;
+const d = c.reduce(function(prevValue, elem, i, array){
+  return prevValue * elem;
 });
 document.writeln(d+ "<br/>");
 
