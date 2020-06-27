@@ -17,7 +17,9 @@
 
 console.log("Expected output of max(10,5) is 10  "+TestMax(10,function () {return max(10,5)}()));
 
-document.writeln( "<h6 class='text-center'> " + " Q1 : Expected output of max(10,5) is 10  "+TestMax(10,function () {return max(10,5)}())  + "<h6/>");
+document.writeln( `<h6 class='text-center'>  Q1 : Expected output of max(10,5) is 10  `+TestMax(10,function () {return max(10,5)}())  + "</h6>");
+
+
 console.assert(max(10,5)==10,"Number is Invalid [Messege From Assertion] ")
 
 //   Question 1 end  Test max
@@ -28,11 +30,11 @@ const  ThreeMax= (a,b,c) => {
 
     return max(a,max(b,c));
 }
-document.writeln( "<h6 class='text-center'> " + " Q2 : Expected output of max(10,5) is 10  "+TestMax(10,function () {return ThreeMax(10,5,4)}())  + "<h6/>");
+document.writeln( `<h6 class="text-center">  Q2 : Expected output of ThreeMax(10,5,4) is 10  `+TestMax(10,function () {return ThreeMax(10,5,4)}())  + "</h6>");
 
 console.log("Expected output of ThreeMax(10,5,4) is 10  "+TestMax(10,function () {return ThreeMax(10,5,4)}()));
 
-console.assert(max(10,5)==10,"Number is Invalid [Messege From Assertion] ")
+console.assert(ThreeMax(10,5,4)==10,"Number is not equal [Messege From Assertion] ")
 //end Question 2 Three Max End
 
 
@@ -53,7 +55,10 @@ const  TestVowel = (expected , found) =>{
 
 console.log("Expected output of TestVowel(a) is  true "+TestVowel(true,isVowel('a')));
 
-console.assert(max(10,5)==10,"Number is Invalid [Messege From Assertion] ")
+document.writeln( `<h6 class='text-center'>  Q3 : Expected output of isVowel('a') is true  `+TestVowel(true,function(){ return isVowel('a') }())  + "</h6>");
+
+
+console.assert(isVowel('a')==true,"Character is not valid [Messege From Assertion] ")
 //End Question 3 Vowel WorkOut
 
 //Start Question 4
@@ -96,7 +101,10 @@ const TestMultiply = (expected ,found)=> {
 
 }
 
-console.log("Expected output of TestSum([1,2,3,4]) is  10 "+TestVowel(10,sum([1,2,3,4,5])));
+document.writeln( `<h6 class="text-center">  Q4.a : Expected output of TestSum([1,2,3,4]) is  10  `+TestVowel(true,function(){ return isVowel('a') }())  + "</h6>");
+document.writeln( `<h6 class="text-center">  Q4.b : Expected output of Multiply([1,2,3,4]) is  24  `+TestMultiply(24,function(){return multiply([1,2,3,4])}()) + "</h6>");
+
+console.log("Expected output of TestSum([1,2,3,4]) is  10 "+TestSum(10,sum([1,2,3,4])));
 console.log("Expected output of Multiply([1,2,3,4]) is  24 "+TestMultiply(24,multiply([1,2,3,4])));
 
 console.assert(max(10,5)==10,"Number is Invalid [Messege From Assertion] ")
